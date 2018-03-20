@@ -1,0 +1,11 @@
+# Mac
+.DS_Store
+# Windows
+Thumbs.db
+
+# npm packages to ignore
+node_modules
+npm-debug.log
+
+# IntelliJ
+.idea
