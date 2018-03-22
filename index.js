@@ -13,13 +13,13 @@ const HTTP_STATUS_CODE_NOT_FOUND = 404;
 const getFixtureById = (id) => fixtures.find((fixture) => fixture.fixtureId === id);
 const randomIntBetweenMinMax = (min, max) => Math.floor(Math.random() * max) + min;
 const secondsToMillis = (seconds) => seconds * 1000;
-const betweenOneAndFiveSecondsInMillis = secondsToMillis(randomIntBetweenMinMax(1, 5));
+const betweenOneAndFiveSecondsInMillis = () => secondsToMillis(randomIntBetweenMinMax(1, 5));
 
 const delayPutAction = (fixture) => new Promise((resolve, reject) => {
   setTimeout(() => {
     fixtures.push(fixture);
     resolve();
-  }, betweenOneAndFiveSecondsInMillis);
+  }, betweenOneAndFiveSecondsInMillis());
 });
 
 app.get('/fixtures', (req, res) => res.json(fixtures));
