@@ -31,7 +31,7 @@ app.get('/fixture/:id', (req, res) => {
 
 });
 
-app.put('/fixture/:id', async (req, res) => {
+app.post('/fixture', async (req, res) => {
 
   await delayPutAction(req.body);
   res.send('Fixture has been added');
