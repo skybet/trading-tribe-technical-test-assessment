@@ -23,16 +23,21 @@ At a high level we will be looking for:
 * Use of relevant design patterns
 * Good understanding of errors and how to handle them
 
-#### Task One
+#### Tasks
 
 Using the provided API:
 
-1. Using the `/fixtures` endpoint, retrieve all fixtures.
+1. Retrieve all fixtures.
 1.1. Assert that there are 4 fixtures within the returned object.
-2. Using the `/fixture` endpoint, store a new fixture.
-2.1. Using the /fixture/{id}` endpoint, retrieve the new fixture.
-3. To simulate latency within systems, there is an intentional, random delay to store a new fixture on the server. 
-3.1. 
+1.2. Assert that each of the 4 fixtures has a fixtureId value.
+2. Using the model guide in `apiDocs.html`, store a new fixture in the database.
+2.1. Get the new fixture.
+2.2. Assert, within the `teams` array, that the first object has a `teamId` of 'HOME'.
+3. Delete the new fixture
+3.1. Assert that the new fixture no longer exists
+4. To simulate latency within systems, there is an intentional, random delay to store a new fixture on the server. 
+4.1. Bearing the delay in mind, retrieve a new fixture as soon as it's available
+ 
 
 ## Installation
 ### Pre-requisites
