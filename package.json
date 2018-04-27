@@ -10,8 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "json-server": "^0.12.1",
-    "ramda": "^0.25.0"
+    "express": "^4.16.3"
   }
 }
