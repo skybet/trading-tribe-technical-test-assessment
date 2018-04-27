@@ -28,8 +28,8 @@ At a high level we will be looking for:
 Using the provided API:
 
 1. Retrieve all fixtures.
-    1. Assert that there are 4 fixtures within the returned object.
-    2. Assert that each of the 4 fixtures has a fixtureId value.
+    1. Assert that there are 3 fixtures within the returned object.
+    2. Assert that each of the 3 fixtures has a fixtureId value.
 2. Using the model guide in `apiDocs.html`, store a new fixture in the database.
     1. Get the new fixture.
     2. Assert, within the `teams` array, that the first object has a `teamId` of 'HOME'.

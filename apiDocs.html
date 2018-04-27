@@ -923,7 +923,7 @@ public class FixtureApiExample {
     public static void main(String[] args) {
         
         FixtureApi apiInstance = new FixtureApi();
-        Long id = 789; // Long | ID of fixture to return
+        String id = id_example; // String | ID of fixture to return
         try {
             apiInstance.findFixtureById(id);
         } catch (ApiException e) {
@@ -941,7 +941,7 @@ public class FixtureApiExample {
 
     public static void main(String[] args) {
         FixtureApi apiInstance = new FixtureApi();
-        Long id = 789; // Long | ID of fixture to return
+        String id = id_example; // String | ID of fixture to return
         try {
             apiInstance.findFixtureById(id);
         } catch (ApiException e) {
@@ -956,7 +956,7 @@ public class FixtureApiExample {
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
                             <div class="tab-pane" id="examples-Fixture-findFixtureById-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Long *id = 789; // ID of fixture to return
+                              <pre class="prettyprint"><code class="language-cpp">String *id = id_example; // ID of fixture to return
 
 FixtureApi *apiInstance = [[FixtureApi alloc] init];
 
@@ -975,7 +975,7 @@ FixtureApi *apiInstance = [[FixtureApi alloc] init];
 
 var api = new MockSkyBetTradingEngine.FixtureApi()
 
-var id = 789; // {Long} ID of fixture to return
+var id = id_example; // {String} ID of fixture to return
 
 
 var callback = function(error, data, response) {
@@ -1007,7 +1007,7 @@ namespace Example
         {
             
             var apiInstance = new FixtureApi();
-            var id = 789;  // Long | ID of fixture to return
+            var id = id_example;  // String | ID of fixture to return
 
             try
             {
@@ -1029,7 +1029,7 @@ namespace Example
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\FixtureApi();
-$id = 789; // Long | ID of fixture to return
+$id = id_example; // String | ID of fixture to return
 
 try {
     $api_instance->findFixtureById($id);
@@ -1045,7 +1045,7 @@ use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::FixtureApi;
 
 my $api_instance = WWW::SwaggerClient::FixtureApi->new();
-my $id = 789; # Long | ID of fixture to return
+my $id = id_example; # String | ID of fixture to return
 
 eval { 
     $api_instance->findFixtureById(id => $id);
@@ -1064,7 +1064,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = swagger_client.FixtureApi()
-id = 789 # Long | ID of fixture to return
+id = id_example # String | ID of fixture to return
 
 try: 
     # Find fixture by ID
@@ -1090,11 +1090,8 @@ except ApiException as e:
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
-                    Long
+                    String
                 </span>
-                    <span class="format">
-                        (int64)
-                    </span>
 
                     <div class="inner description">
                         ID of fixture to return
@@ -1616,7 +1613,7 @@ $(document).ready(function() {
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2018-03-27T10:52:16.931Z
+              Generated 2018-04-27T14:33:27.218Z
             </div>
           </div>
       </div>
