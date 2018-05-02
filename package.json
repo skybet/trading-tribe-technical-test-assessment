@@ -1,7 +1,7 @@
 {
   "name": "sbg-technical-tester-assessment",
   "version": "1.0.0",
-  "description": "Trading Tribe's Techncial Tester Assessment",
+  "description": "Trading Tribe's Technical Tester Assessment",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
