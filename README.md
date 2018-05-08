@@ -31,8 +31,8 @@ At a high level we will be looking for:
 * Good understanding of errors and how to handle them
 
 ### Submission
-Please upload your completed test to a publicly-accessible repository in a hosting service (e.g. GitHub), 
-or send a zipped copy of the project directory to your recruitment contact at Sky Bet.
+Please upload your completed test to a publicly-accessible repository in a hosting service (e.g. GitHub), and send a link to your recruitment contact at Sky Bet,
+or send a zipped copy of the project directory to him/her directly.
 
 ## Installation
 ### Pre-requisites
