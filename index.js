@@ -12,7 +12,7 @@ const HTTP_STATUS_CODE_NOT_FOUND = 404;
 
 const getFixtureById = id => fixtures.find(fixture => fixture.fixtureId === id);
 const getFixtureIndex = id => fixtures.findIndex(fixture => fixture.fixtureId === id);
-const deleteFixtureById = id => fixtures.splice(getFixtureById(id), 1);
+const deleteFixtureById = id => fixtures.splice(getFixtureIndex(id), 1);
 const randomIntBetweenMinMax = (min, max) => Math.floor(Math.random() * max) + min;
 const secondsToMillis = seconds => seconds * 1000;
 const betweenOneAndFiveSecondsInMillis = () => secondsToMillis(randomIntBetweenMinMax(1, 5));
