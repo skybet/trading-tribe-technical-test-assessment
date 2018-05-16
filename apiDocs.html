@@ -848,6 +848,9 @@ margin-bottom: 20px;
                     <li data-group="Fixture" data-name="findFixtureById" class="">
                       <a href="#api-Fixture-findFixtureById">findFixtureById</a>
                     </li>
+                    <li data-group="Fixture" data-name="fixtureIdDelete" class="">
+                      <a href="#api-Fixture-fixtureIdDelete">fixtureIdDelete</a>
+                    </li>
                     <li data-group="Fixture" data-name="getFixtures" class="">
                       <a href="#api-Fixture-getFixtures">getFixtures</a>
                     </li>
@@ -1113,6 +1116,262 @@ except ApiException as e:
 
                           <h2>Responses</h2>
                             <h3> Status: 200 - Fixture successfully found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 404 - Fixture not found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Fixture-fixtureIdDelete">
+                      <article id="api-Fixture-fixtureIdDelete-0" data-group="User" data-name="fixtureIdDelete" data-version="0">
+                        <div class="pull-left">
+                          <h1>fixtureIdDelete</h1>
+                          <p>Delete fixture by ID</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/fixture/{id}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Fixture-fixtureIdDelete-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fixture-fixtureIdDelete-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fixture-fixtureIdDelete-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Fixture-fixtureIdDelete-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://localhost:3000/fixture/{id}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.FixtureApi;
+
+import java.io.File;
+import java.util.*;
+
+public class FixtureApiExample {
+
+    public static void main(String[] args) {
+        
+        FixtureApi apiInstance = new FixtureApi();
+        String id = id_example; // String | ID of fixture to delete
+        try {
+            apiInstance.fixtureIdDelete(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FixtureApi#fixtureIdDelete");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FixtureApi;
+
+public class FixtureApiExample {
+
+    public static void main(String[] args) {
+        FixtureApi apiInstance = new FixtureApi();
+        String id = id_example; // String | ID of fixture to delete
+        try {
+            apiInstance.fixtureIdDelete(id);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FixtureApi#fixtureIdDelete");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *id = id_example; // ID of fixture to delete
+
+FixtureApi *apiInstance = [[FixtureApi alloc] init];
+
+// Delete fixture by ID
+[apiInstance fixtureIdDeleteWith:id
+              completionHandler: ^(NSError* error) {
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var MockSkyBetTradingEngine = require('mock_sky_bet_trading_engine');
+
+var api = new MockSkyBetTradingEngine.FixtureApi()
+
+var id = id_example; // {String} ID of fixture to delete
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+api.fixtureIdDelete(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class fixtureIdDeleteExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new FixtureApi();
+            var id = id_example;  // String | ID of fixture to delete
+
+            try
+            {
+                // Delete fixture by ID
+                apiInstance.fixtureIdDelete(id);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling FixtureApi.fixtureIdDelete: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\FixtureApi();
+$id = id_example; // String | ID of fixture to delete
+
+try {
+    $api_instance->fixtureIdDelete($id);
+} catch (Exception $e) {
+    echo 'Exception when calling FixtureApi->fixtureIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::FixtureApi;
+
+my $api_instance = WWW::SwaggerClient::FixtureApi->new();
+my $id = id_example; # String | ID of fixture to delete
+
+eval { 
+    $api_instance->fixtureIdDelete(id => $id);
+};
+if ($@) {
+    warn "Exception when calling FixtureApi->fixtureIdDelete: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.FixtureApi()
+id = id_example # String | ID of fixture to delete
+
+try: 
+    # Delete fixture by ID
+    api_instance.fixture_id_delete(id)
+except ApiException as e:
+    print("Exception when calling FixtureApi->fixtureIdDelete: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+<td>
+
+
+    <div id="d2e199_fixtureIdDelete_id">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    String
+                </span>
+
+                    <div class="inner description">
+                        ID of fixture to delete
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Fixture has been deleted </h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1613,7 +1872,7 @@ $(document).ready(function() {
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2018-04-27T14:33:27.218Z
+              Generated 2018-05-16T12:07:19.418Z
             </div>
           </div>
       </div>
