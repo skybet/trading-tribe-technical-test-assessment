@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(bodyParser.json());
 
-const fixtures = require('./data/fixtures');
+const fixtures = require("./data/fixtures");
 
 let fixturesDB = JSON.parse(JSON.stringify(fixtures));
 
@@ -37,22 +37,22 @@ const delayPutAction = fixture =>
 const checkIfFixtureExists = fixtureId => getFixtureIndex(fixtureId) !== -1;
 
 const fixtureNotFound = res =>
-  res.status(HTTP_STATUS_CODE_NOT_FOUND).send('Fixture not found');
+  res.status(HTTP_STATUS_CODE_NOT_FOUND).send("Fixture not found");
 
-app.get('/fixtures', (req, res) => res.json(fixtures));
+app.get("/fixtures", (req, res) => res.json(fixtures));
 
-app.get('/fixture/:id', (req, res) => {
+app.get("/fixture/:id", (req, res) => {
   checkIfFixtureExists(req.params.id)
     ? res.json(getFixtureById(fixtureId))
     : fixtureNotFound(res);
 });
 
-app.post('/fixture', async (req, res) => {
+app.post("/fixture", async (req, res) => {
   await delayPutAction(req.body);
-  res.send('Fixture has been added');
+  res.send("Fixture has been added");
 });
 
-app.delete('/fixture/:id', (req, res) => {
+app.delete("/fixture/:id", (req, res) => {
   const fixtureId = req.params.id;
 
   if (checkIfFixtureExists(fixtureId)) {
@@ -61,10 +61,10 @@ app.delete('/fixture/:id', (req, res) => {
     const deleteFixtureObjectByIndex = id => findFixtureObjectByID(id);
 
     fixturesDB = fixturesDB.filter(fixture => fixture.fixtureId !== fixtureId);
-    res.send('Fixture has been deleted');
+    res.send("Fixture has been deleted");
   } else {
     fixtureNotFound(res);
   }
 });
 
-app.listen(3000, () => console.log('Server is listening on port 3000'));
+app.listen(3000, () => console.log("Server is listening on port 3000"));
