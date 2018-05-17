@@ -39,10 +39,11 @@ const checkIfFixtureExists = fixtureId => getFixtureIndex(fixtureId) !== -1;
 const fixtureNotFound = res =>
   res.status(HTTP_STATUS_CODE_NOT_FOUND).send("Fixture not found");
 
-app.get("/fixtures", (req, res) => res.json(fixtures));
+app.get("/fixtures", (req, res) => res.json(fixturesDB));
 
 app.get("/fixture/:id", (req, res) => {
-  checkIfFixtureExists(req.params.id)
+  const fixtureId = req.params.id;
+  checkIfFixtureExists(fixtureId)
     ? res.json(getFixtureById(fixtureId))
     : fixtureNotFound(res);
 });
@@ -56,10 +57,6 @@ app.delete("/fixture/:id", (req, res) => {
   const fixtureId = req.params.id;
 
   if (checkIfFixtureExists(fixtureId)) {
-    const findFixtureObjectByID = id =>
-      fixturesDB.map(fixture => fixture.fixtureId).indexOf(id);
-    const deleteFixtureObjectByIndex = id => findFixtureObjectByID(id);
-
     fixturesDB = fixturesDB.filter(fixture => fixture.fixtureId !== fixtureId);
     res.send("Fixture has been deleted");
   } else {
