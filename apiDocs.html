@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mock Sky Bet Trading Engine</title>
+  <title>Mock Trading Engine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8" />
@@ -157,7 +157,7 @@ h={};g()}};typeof define==="function"&&define.amd&&define("google-code-prettify"
     });
   </script>
   <style type="text/css">
-  
+
 /*!
  * Bootstrap v2.3.2
  *
@@ -700,8 +700,7 @@ margin-bottom: 20px;
   "type" : "object",
   "properties" : {
     "fixtureId" : {
-      "type" : "integer",
-      "format" : "int64"
+      "type" : "string",
     },
     "fixtureStatus" : {
       "$ref" : "#/definitions/Fixture_fixtureStatus"
@@ -857,22 +856,25 @@ margin-bottom: 20px;
                     <li data-group="Fixture" data-name="storeNewFixture" class="">
                       <a href="#api-Fixture-storeNewFixture">storeNewFixture</a>
                     </li>
+                    <li data-group="Fixture" data-name="updateFixture" class="">
+                      <a href="#api-Fixture-updateFixture">updateFixture</a>
+                    </li>
           </ul>
         </nav>
       </div>
       <div id="content">
         <div id="project">
           <div class="pull-left">
-            <h1>Mock Sky Bet Trading Engine</h1>
+            <h1>Mock Trading Engine</h1>
           </div>
           <div class="clearfix"></div>
         </div>
         <div id="header">
           <div id="api-_">
             <h2 id="welcome-to-apidoc">API and SDK Documentation</h2>
-              <div class="app-desc">Version: 1.0.0</div>
+              <div class="app-desc">Version: 1.1.0</div>
             <hr>
-            <div>Mock API server that represents a snapshot of our internal Sky Bet Trading Engine</div>
+            <div>Mock API server that represents a snapshot of our internal Trading Engine</div>
           </div>
         </div>
         <div id="sections">
@@ -892,189 +894,15 @@ margin-bottom: 20px;
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/fixture/{id}</span></code></pre>
                         <p>
-                          <h3>Usage and SDK Samples</h3>
+                          <h3>Usage</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
                           <li class="active"><a href="#examples-Fixture-findFixtureById-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-findFixtureById-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-findFixtureById-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Fixture-findFixtureById-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Fixture-findFixtureById-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/fixture/{id}"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Fixture-findFixtureById-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.FixtureApi;
-
-import java.io.File;
-import java.util.*;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        
-        FixtureApi apiInstance = new FixtureApi();
-        String id = id_example; // String | ID of fixture to return
-        try {
-            apiInstance.findFixtureById(id);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#findFixtureById");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Fixture-findFixtureById-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FixtureApi;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        FixtureApi apiInstance = new FixtureApi();
-        String id = id_example; // String | ID of fixture to return
-        try {
-            apiInstance.findFixtureById(id);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#findFixtureById");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Fixture-findFixtureById-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Fixture-findFixtureById-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *id = id_example; // ID of fixture to return
-
-FixtureApi *apiInstance = [[FixtureApi alloc] init];
-
-// Find fixture by ID
-[apiInstance findFixtureByIdWith:id
-              completionHandler: ^(NSError* error) {
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-findFixtureById-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var MockSkyBetTradingEngine = require('mock_sky_bet_trading_engine');
-
-var api = new MockSkyBetTradingEngine.FixtureApi()
-
-var id = id_example; // {String} ID of fixture to return
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.findFixtureById(id, callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Fixture-findFixtureById-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Fixture-findFixtureById-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class findFixtureByIdExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new FixtureApi();
-            var id = id_example;  // String | ID of fixture to return
-
-            try
-            {
-                // Find fixture by ID
-                apiInstance.findFixtureById(id);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling FixtureApi.findFixtureById: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-findFixtureById-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\FixtureApi();
-$id = id_example; // String | ID of fixture to return
-
-try {
-    $api_instance->findFixtureById($id);
-} catch (Exception $e) {
-    echo 'Exception when calling FixtureApi->findFixtureById: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-findFixtureById-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::FixtureApi;
-
-my $api_instance = WWW::SwaggerClient::FixtureApi->new();
-my $id = id_example; # String | ID of fixture to return
-
-eval { 
-    $api_instance->findFixtureById(id => $id);
-};
-if ($@) {
-    warn "Exception when calling FixtureApi->findFixtureById: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-findFixtureById-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.FixtureApi()
-id = id_example # String | ID of fixture to return
-
-try: 
-    # Find fixture by ID
-    api_instance.find_fixture_by_id(id)
-except ApiException as e:
-    print("Exception when calling FixtureApi->findFixtureById: %s\n" % e)</code></pre>
-                            </div>
                           </div>
 
                           <h2>Parameters</h2>
@@ -1115,7 +943,7 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - Fixture successfully found </h3>
+                            <h3> Status: 200 - OK</h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1123,7 +951,7 @@ except ApiException as e:
                             <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
-                            <h3> Status: 404 - Fixture not found </h3>
+                            <h3> Status: 404 - Not Found</h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1148,189 +976,15 @@ except ApiException as e:
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/fixture/{id}</span></code></pre>
                         <p>
-                          <h3>Usage and SDK Samples</h3>
+                          <h3>Usage</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
                           <li class="active"><a href="#examples-Fixture-fixtureIdDelete-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-fixtureIdDelete-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-fixtureIdDelete-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Fixture-fixtureIdDelete-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Fixture-fixtureIdDelete-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://localhost:3000/fixture/{id}"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.FixtureApi;
-
-import java.io.File;
-import java.util.*;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        
-        FixtureApi apiInstance = new FixtureApi();
-        String id = id_example; // String | ID of fixture to delete
-        try {
-            apiInstance.fixtureIdDelete(id);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#fixtureIdDelete");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FixtureApi;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        FixtureApi apiInstance = new FixtureApi();
-        String id = id_example; // String | ID of fixture to delete
-        try {
-            apiInstance.fixtureIdDelete(id);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#fixtureIdDelete");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *id = id_example; // ID of fixture to delete
-
-FixtureApi *apiInstance = [[FixtureApi alloc] init];
-
-// Delete fixture by ID
-[apiInstance fixtureIdDeleteWith:id
-              completionHandler: ^(NSError* error) {
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var MockSkyBetTradingEngine = require('mock_sky_bet_trading_engine');
-
-var api = new MockSkyBetTradingEngine.FixtureApi()
-
-var id = id_example; // {String} ID of fixture to delete
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.fixtureIdDelete(id, callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class fixtureIdDeleteExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new FixtureApi();
-            var id = id_example;  // String | ID of fixture to delete
-
-            try
-            {
-                // Delete fixture by ID
-                apiInstance.fixtureIdDelete(id);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling FixtureApi.fixtureIdDelete: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\FixtureApi();
-$id = id_example; // String | ID of fixture to delete
-
-try {
-    $api_instance->fixtureIdDelete($id);
-} catch (Exception $e) {
-    echo 'Exception when calling FixtureApi->fixtureIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::FixtureApi;
-
-my $api_instance = WWW::SwaggerClient::FixtureApi->new();
-my $id = id_example; # String | ID of fixture to delete
-
-eval { 
-    $api_instance->fixtureIdDelete(id => $id);
-};
-if ($@) {
-    warn "Exception when calling FixtureApi->fixtureIdDelete: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-fixtureIdDelete-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.FixtureApi()
-id = id_example # String | ID of fixture to delete
-
-try: 
-    # Delete fixture by ID
-    api_instance.fixture_id_delete(id)
-except ApiException as e:
-    print("Exception when calling FixtureApi->fixtureIdDelete: %s\n" % e)</code></pre>
-                            </div>
                           </div>
 
                           <h2>Parameters</h2>
@@ -1371,7 +1025,7 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - Fixture has been deleted </h3>
+                            <h3> Status: 204 - No Content</h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1379,7 +1033,7 @@ except ApiException as e:
                             <div class="tab-content" style='margin-bottom: 10px;'>
                             </div>
 
-                            <h3> Status: 404 - Fixture not found </h3>
+                            <h3> Status: 404 - Not Found</h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1404,179 +1058,15 @@ except ApiException as e:
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/fixtures</span></code></pre>
                         <p>
-                          <h3>Usage and SDK Samples</h3>
+                          <h3>Usage</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
                           <li class="active"><a href="#examples-Fixture-getFixtures-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-getFixtures-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-getFixtures-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Fixture-getFixtures-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Fixture-getFixtures-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/fixtures"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Fixture-getFixtures-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.FixtureApi;
-
-import java.io.File;
-import java.util.*;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        
-        FixtureApi apiInstance = new FixtureApi();
-        try {
-            apiInstance.getFixtures();
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#getFixtures");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Fixture-getFixtures-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FixtureApi;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        FixtureApi apiInstance = new FixtureApi();
-        try {
-            apiInstance.getFixtures();
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#getFixtures");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Fixture-getFixtures-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Fixture-getFixtures-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">
-FixtureApi *apiInstance = [[FixtureApi alloc] init];
-
-// Get all fixtures
-[apiInstance getFixturesWithCompletionHandler: 
-              ^(NSError* error) {
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-getFixtures-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var MockSkyBetTradingEngine = require('mock_sky_bet_trading_engine');
-
-var api = new MockSkyBetTradingEngine.FixtureApi()
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.getFixtures(callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Fixture-getFixtures-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Fixture-getFixtures-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class getFixturesExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new FixtureApi();
-
-            try
-            {
-                // Get all fixtures
-                apiInstance.getFixtures();
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling FixtureApi.getFixtures: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-getFixtures-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\FixtureApi();
-
-try {
-    $api_instance->getFixtures();
-} catch (Exception $e) {
-    echo 'Exception when calling FixtureApi->getFixtures: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-getFixtures-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::FixtureApi;
-
-my $api_instance = WWW::SwaggerClient::FixtureApi->new();
-
-eval { 
-    $api_instance->getFixtures();
-};
-if ($@) {
-    warn "Exception when calling FixtureApi->getFixtures: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-getFixtures-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.FixtureApi()
-
-try: 
-    # Get all fixtures
-    api_instance.get_fixtures()
-except ApiException as e:
-    print("Exception when calling FixtureApi->getFixtures: %s\n" % e)</code></pre>
-                            </div>
                           </div>
 
                           <h2>Parameters</h2>
@@ -1587,7 +1077,7 @@ except ApiException as e:
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - Success </h3>
+                            <h3> Status: 200 - OK</h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1612,189 +1102,15 @@ except ApiException as e:
                         <br />
                         <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/fixture</span></code></pre>
                         <p>
-                          <h3>Usage and SDK Samples</h3>
+                          <h3>Usage</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
                           <li class="active"><a href="#examples-Fixture-storeNewFixture-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-storeNewFixture-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Fixture-storeNewFixture-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Fixture-storeNewFixture-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Fixture-storeNewFixture-0-curl">
                             <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:3000/fixture"</code></pre>
-                          </div>
-                          <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-java">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
-import io.swagger.client.auth.*;
-import io.swagger.client.model.*;
-import io.swagger.client.api.FixtureApi;
-
-import java.io.File;
-import java.util.*;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        
-        FixtureApi apiInstance = new FixtureApi();
-        Fixture body = ; // Fixture | Created fixture object
-        try {
-            apiInstance.storeNewFixture(body);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#storeNewFixture");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-
-                          <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FixtureApi;
-
-public class FixtureApiExample {
-
-    public static void main(String[] args) {
-        FixtureApi apiInstance = new FixtureApi();
-        Fixture body = ; // Fixture | Created fixture object
-        try {
-            apiInstance.storeNewFixture(body);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FixtureApi#storeNewFixture");
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-                          </div>
-  <!--
-  <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-groovy">
-  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-  </div> -->
-                            <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Fixture *body = ; // Created fixture object
-
-FixtureApi *apiInstance = [[FixtureApi alloc] init];
-
-// Stores a new fixture
-[apiInstance storeNewFixtureWith:body
-              completionHandler: ^(NSError* error) {
-                            if (error) {
-                                NSLog(@"Error: %@", error);
-                            }
-                        }];
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-javascript">
-                              <pre class="prettyprint"><code class="language-js">var MockSkyBetTradingEngine = require('mock_sky_bet_trading_engine');
-
-var api = new MockSkyBetTradingEngine.FixtureApi()
-
-var body = ; // {Fixture} Created fixture object
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-api.storeNewFixture(body, callback);
-</code></pre>
-                            </div>
-
-                            <!--<div class="tab-pane" id="examples-Fixture-storeNewFixture-0-angular">
-              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
-            </div>-->
-                            <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-csharp">
-                              <pre class="prettyprint"><code class="language-cs">using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class storeNewFixtureExample
-    {
-        public void main()
-        {
-            
-            var apiInstance = new FixtureApi();
-            var body = new Fixture(); // Fixture | Created fixture object
-
-            try
-            {
-                // Stores a new fixture
-                apiInstance.storeNewFixture(body);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling FixtureApi.storeNewFixture: " + e.Message );
-            }
-        }
-    }
-}
-</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-php">
-                              <pre class="prettyprint"><code class="language-php"><&#63;php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Swagger\Client\Api\FixtureApi();
-$body = ; // Fixture | Created fixture object
-
-try {
-    $api_instance->storeNewFixture($body);
-} catch (Exception $e) {
-    echo 'Exception when calling FixtureApi->storeNewFixture: ', $e->getMessage(), PHP_EOL;
-}
-?></code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-perl">
-                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::FixtureApi;
-
-my $api_instance = WWW::SwaggerClient::FixtureApi->new();
-my $body = WWW::SwaggerClient::Object::Fixture->new(); # Fixture | Created fixture object
-
-eval { 
-    $api_instance->storeNewFixture(body => $body);
-};
-if ($@) {
-    warn "Exception when calling FixtureApi->storeNewFixture: $@\n";
-}</code></pre>
-                            </div>
-
-                            <div class="tab-pane" id="examples-Fixture-storeNewFixture-0-python">
-                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = swagger_client.FixtureApi()
-body =  # Fixture | Created fixture object
-
-try: 
-    # Stores a new fixture
-    api_instance.store_new_fixture(body)
-except ApiException as e:
-    print("Exception when calling FixtureApi->storeNewFixture: %s\n" % e)</code></pre>
-                            </div>
                           </div>
 
                           <h2>Parameters</h2>
@@ -1847,7 +1163,15 @@ $(document).ready(function() {
 
 
                           <h2>Responses</h2>
-                            <h3> Status: 200 - Fixture saved </h3>
+                            <h3> Status: 202 - Accepted</h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 403 - Forbidden</h3>
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                             </ul>
@@ -1858,6 +1182,99 @@ $(document).ready(function() {
                         </article>
                       </div>
                       <hr>
+                    <div id="api-Fixture-updateFixture">
+                      <article id="api-Fixture-updateFixture-0" data-group="User" data-name="updateFixture" data-version="0">
+                        <div class="pull-left">
+                          <h1>updateFixture</h1>
+                          <p>Updates an existing fixture</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked"></p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/fixture</span></code></pre>
+                        <p>
+                          <h3>Usage</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Fixture-updateFixture-0-curl">Curl</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Fixture-updateFixture-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "http://localhost:3000/fixture"</code></pre>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">body <span style="color:red;">*</span></td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "body",
+  "description" : "Created fixture object",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Fixture"
+  }
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_updateFixture_body');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_updateFixture_body"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 204 - No Content</h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                            <h3> Status: 403 - Forbidden</h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                            </div>
+
+                        </article>
+                      </div>
                   </section>
           </div>
           <div id="footer">
@@ -1872,7 +1289,7 @@ $(document).ready(function() {
           </div>
           <div id="generator">
             <div class="content">
-              Generated 2018-05-16T12:07:19.418Z
+              Modified 2020-11-23
             </div>
           </div>
       </div>
@@ -2377,7 +1794,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
+
 	// load the styles
 	var content = __webpack_require__(3);
 	if(typeof content === 'string') content = [[module.id, content, '']];
@@ -2404,11 +1821,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports = module.exports = __webpack_require__(4)();
 	// imports
-	
-	
+
+
 	// module
 	exports.push([module.id, ".json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-row,\n.json-formatter-row a,\n.json-formatter-row a:hover {\n  color: black;\n  text-decoration: none;\n}\n.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-row .json-formatter-string {\n  color: green;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-row .json-formatter-number {\n  color: blue;\n}\n.json-formatter-row .json-formatter-boolean {\n  color: red;\n}\n.json-formatter-row .json-formatter-null {\n  color: #855A00;\n}\n.json-formatter-row .json-formatter-undefined {\n  color: #ca0b69;\n}\n.json-formatter-row .json-formatter-function {\n  color: #FF20ED;\n}\n.json-formatter-row .json-formatter-date {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: blue;\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-bracket {\n  color: blue;\n}\n.json-formatter-row .json-formatter-key {\n  color: #00008B;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"\\25BA\";\n}\n.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n.json-formatter-dark.json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-dark.json-formatter-row,\n.json-formatter-dark.json-formatter-row a,\n.json-formatter-dark.json-formatter-row a:hover {\n  color: white;\n  text-decoration: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-string {\n  color: #31F031;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-number {\n  color: #66C2FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-boolean {\n  color: #EC4242;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-null {\n  color: #EEC97D;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-undefined {\n  color: #ef8fbe;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-function {\n  color: #FD48CB;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-date {\n  background-color: rgba(255, 255, 255, 0.05);\n}\n.json-formatter-dark.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: #027BFF;\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-bracket {\n  color: #9494FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-key {\n  color: #23A0DB;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"\\25BA\";\n}\n.json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n", "", {"version":3,"sources":["/./src/style.less","/./src/style.less"],"names":[],"mappings":"AA0GA;EA3FE,uBAAA;CCbD;ADcC;;;EACE,aAAA;EACA,sBAAA;CCVH;ADkGD;EApFI,kBAAA;CCXH;ADeG;EACE,aAAA;EACA,kBAAA;CCbL;ADeK;EAAU,cAAA;CCZf;ADaK;EAAgC,yBAAA;CCVrC;ADWK;EAA+B,cAAA;CCRpC;ADkFD;EArEI,aAAA;EACA,iBAAA;EACA,sBAAA;CCVH;AD6ED;EAjE2B,YAAA;CCT1B;AD0ED;EAhE4B,WAAA;CCP3B;ADuED;EA/DyB,eAAA;CCLxB;ADoED;EA9D8B,eAAA;CCH7B;ADiED;EA7D6B,eAAA;CCD5B;AD8DD;EA5DyB,sCAAA;CCCxB;AD2DD;EA1DI,2BAAA;EACA,YAAA;EACA,gBAAA;CCEH;ADsDD;EArD4B,YAAA;CCE3B;ADmDD;EAnDI,eAAA;EACA,gBAAA;EACA,sBAAA;CCGH;AD8CD;EA9CI,gBAAA;CCGH;AD2CD;EA1CI,oBAAA;EACA,kBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,sBAAA;CCEH;ADAG;EACE,sBAAA;EACA,oCAAA;EACA,iBAAA;CCEL;AD8BD;EA1BI,WAAA;EACA,kCAAA;EACA,mBAAA;CCDH;ADGC;EACE,aAAA;CCDH;ADKC;EAEI,yBAAA;CCJL;ADEC;EAKI,sBAAA;CCJL;ADDC;EAQI,cAAA;CCJL;ADMG;EACE,eAAA;CCJL;ADeD;EAhGE,uBAAA;CCoFD;ADnFC;;;EACE,aAAA;EACA,sBAAA;CCuFH;ADMD;EAzFI,kBAAA;CCsFH;ADlFG;EACE,aAAA;EACA,kBAAA;CCoFL;ADlFK;EAAU,cAAA;CCqFf;ADpFK;EAAgC,yBAAA;CCuFrC;ADtFK;EAA+B,cAAA;CCyFpC;ADVD;EA1EI,eAAA;EACA,iBAAA;EACA,sBAAA;CCuFH;ADfD;EAtE2B,eAAA;CCwF1B;ADlBD;EArE4B,eAAA;CC0F3B;ADrBD;EApEyB,eAAA;CC4FxB;ADxBD;EAnE8B,eAAA;CC8F7B;AD3BD;EAlE6B,eAAA;CCgG5B;AD9BD;EAjEyB,4CAAA;CCkGxB;ADjCD;EA/DI,2BAAA;EACA,eAAA;EACA,gBAAA;CCmGH;ADtCD;EA1D4B,eAAA;CCmG3B;ADzCD;EAxDI,eAAA;EACA,gBAAA;EACA,sBAAA;CCoGH;AD9CD;EAnDI,gBAAA;CCoGH;ADjDD;EA/CI,oBAAA;EACA,kBAAA;EACA,uBAAA;EACA,aAAA;EACA,gBAAA;EACA,sBAAA;CCmGH;ADjGG;EACE,sBAAA;EACA,oCAAA;EACA,iBAAA;CCmGL;AD9DD;EA/BI,WAAA;EACA,kCAAA;EACA,mBAAA;CCgGH;AD9FC;EACE,aAAA;CCgGH;AD5FC;EAEI,yBAAA;CC6FL;AD/FC;EAKI,sBAAA;CC6FL;ADlGC;EAQI,cAAA;CC6FL;AD3FG;EACE,eAAA;CC6FL","file":"style.less","sourcesContent":[".theme(\n  @default-color: black,\n  @string-color: green,\n  @number-color: blue,\n  @boolean-color: red,\n  @null-color: #855A00,\n  @undefined-color: rgb(202, 11, 105),\n  @function-color: #FF20ED,\n  @rotate-time: 100ms,\n  @toggler-opacity: 0.6,\n  @toggler-color: #45376F,\n  @bracket-color: blue,\n  @key-color: #00008B,\n  @url-color: blue ){\n\n  font-family: monospace;\n  &, a, a:hover {\n    color: @default-color;\n    text-decoration: none;\n  }\n\n  .json-formatter-row {\n    margin-left: 1rem;\n  }\n\n  .json-formatter-children {\n    &.json-formatter-empty {\n      opacity: 0.5;\n      margin-left: 1rem;\n\n      &:after { display: none; }\n      &.json-formatter-object:after { content: \"No properties\"; }\n      &.json-formatter-array:after { content: \"[]\"; }\n    }\n  }\n\n  .json-formatter-string {\n    color: @string-color;\n    white-space: pre;\n    word-wrap: break-word;\n  }\n  .json-formatter-number { color: @number-color; }\n  .json-formatter-boolean { color: @boolean-color; }\n  .json-formatter-null { color: @null-color; }\n  .json-formatter-undefined { color: @undefined-color; }\n  .json-formatter-function { color: @function-color; }\n  .json-formatter-date { background-color: fade(@default-color, 5%); }\n  .json-formatter-url {\n    text-decoration: underline;\n    color: @url-color;\n    cursor: pointer;\n  }\n\n  .json-formatter-bracket { color: @bracket-color; }\n  .json-formatter-key {\n    color: @key-color;\n    cursor: pointer;\n    padding-right: 0.2rem;\n  }\n  .json-formatter-constructor-name {\n    cursor: pointer;\n  }\n\n  .json-formatter-toggler {\n    line-height: 1.2rem;\n    font-size: 0.7rem;\n    vertical-align: middle;\n    opacity: @toggler-opacity;\n    cursor: pointer;\n    padding-right: 0.2rem;\n\n    &:after {\n      display: inline-block;\n      transition: transform @rotate-time ease-in;\n      content: \"►\";\n    }\n  }\n\n  // Inline preview on hover (optional)\n  > a > .json-formatter-preview-text {\n    opacity: 0;\n    transition: opacity .15s ease-in;\n    font-style: italic;\n  }\n  &:hover > a > .json-formatter-preview-text {\n    opacity: 0.6;\n  }\n\n  // Open state\n  &.json-formatter-open {\n    > .json-formatter-toggler-link .json-formatter-toggler:after{\n      transform: rotate(90deg);\n    }\n    > .json-formatter-children:after {\n      display: inline-block;\n    }\n    > a > .json-formatter-preview-text {\n      display: none;\n    }\n    &.json-formatter-empty:after {\n      display: block;\n    }\n  }\n}\n\n// Default theme\n.json-formatter-row {\n  .theme();\n}\n\n// Dark theme\n.json-formatter-dark.json-formatter-row {\n  .theme(\n    @default-color: white,\n    @string-color: #31F031,\n    @number-color: #66C2FF,\n    @boolean-color: #EC4242,\n    @null-color: #EEC97D,\n    @undefined-color: rgb(239, 143, 190),\n    @function-color: #FD48CB,\n    @rotate-time: 100ms,\n    @toggler-opacity: 0.6,\n    @toggler-color: #45376F,\n    @bracket-color: #9494FF,\n    @key-color: #23A0DB,\n    @url-color: #027BFF);\n}\n",".json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-row,\n.json-formatter-row a,\n.json-formatter-row a:hover {\n  color: black;\n  text-decoration: none;\n}\n.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-row .json-formatter-string {\n  color: green;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-row .json-formatter-number {\n  color: blue;\n}\n.json-formatter-row .json-formatter-boolean {\n  color: red;\n}\n.json-formatter-row .json-formatter-null {\n  color: #855A00;\n}\n.json-formatter-row .json-formatter-undefined {\n  color: #ca0b69;\n}\n.json-formatter-row .json-formatter-function {\n  color: #FF20ED;\n}\n.json-formatter-row .json-formatter-date {\n  background-color: rgba(0, 0, 0, 0.05);\n}\n.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: blue;\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-bracket {\n  color: blue;\n}\n.json-formatter-row .json-formatter-key {\n  color: #00008B;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"►\";\n}\n.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n.json-formatter-dark.json-formatter-row {\n  font-family: monospace;\n}\n.json-formatter-dark.json-formatter-row,\n.json-formatter-dark.json-formatter-row a,\n.json-formatter-dark.json-formatter-row a:hover {\n  color: white;\n  text-decoration: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-row {\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty {\n  opacity: 0.5;\n  margin-left: 1rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty:after {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-object:after {\n  content: \"No properties\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-children.json-formatter-empty.json-formatter-array:after {\n  content: \"[]\";\n}\n.json-formatter-dark.json-formatter-row .json-formatter-string {\n  color: #31F031;\n  white-space: pre;\n  word-wrap: break-word;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-number {\n  color: #66C2FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-boolean {\n  color: #EC4242;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-null {\n  color: #EEC97D;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-undefined {\n  color: #ef8fbe;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-function {\n  color: #FD48CB;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-date {\n  background-color: rgba(255, 255, 255, 0.05);\n}\n.json-formatter-dark.json-formatter-row .json-formatter-url {\n  text-decoration: underline;\n  color: #027BFF;\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-bracket {\n  color: #9494FF;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-key {\n  color: #23A0DB;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-constructor-name {\n  cursor: pointer;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler {\n  line-height: 1.2rem;\n  font-size: 0.7rem;\n  vertical-align: middle;\n  opacity: 0.6;\n  cursor: pointer;\n  padding-right: 0.2rem;\n}\n.json-formatter-dark.json-formatter-row .json-formatter-toggler:after {\n  display: inline-block;\n  transition: transform 100ms ease-in;\n  content: \"►\";\n}\n.json-formatter-dark.json-formatter-row > a > .json-formatter-preview-text {\n  opacity: 0;\n  transition: opacity 0.15s ease-in;\n  font-style: italic;\n}\n.json-formatter-dark.json-formatter-row:hover > a > .json-formatter-preview-text {\n  opacity: 0.6;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-toggler-link .json-formatter-toggler:after {\n  transform: rotate(90deg);\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > .json-formatter-children:after {\n  display: inline-block;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open > a > .json-formatter-preview-text {\n  display: none;\n}\n.json-formatter-dark.json-formatter-row.json-formatter-open.json-formatter-empty:after {\n  display: block;\n}\n"],"sourceRoot":"webpack://"}]);
-	
+
 	// exports
 
 
@@ -2423,7 +1840,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// css base code, injected by the css-loader
 	module.exports = function() {
 		var list = [];
-	
+
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
@@ -2437,7 +1854,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 			return result.join("");
 		};
-	
+
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -2493,23 +1910,23 @@ return /******/ (function(modules) { // webpackBootstrap
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [];
-	
+
 	module.exports = function(list, options) {
 		if(false) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
-	
+
 		options = options || {};
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
+
 		// By default, add <style> tags to the bottom of <head>.
 		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
+
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
-	
+
 		return function update(newList) {
 			var mayRemove = [];
 			for(var i = 0; i < styles.length; i++) {
@@ -2532,7 +1949,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		};
 	}
-	
+
 	function addStylesToDom(styles, options) {
 		for(var i = 0; i < styles.length; i++) {
 			var item = styles[i];
@@ -2554,7 +1971,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		}
 	}
-	
+
 	function listToStyles(list) {
 		var styles = [];
 		var newStyles = {};
@@ -2572,7 +1989,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 		return styles;
 	}
-	
+
 	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
 		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
@@ -2591,7 +2008,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 		}
 	}
-	
+
 	function removeStyleElement(styleElement) {
 		styleElement.parentNode.removeChild(styleElement);
 		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
@@ -2599,24 +2016,24 @@ return /******/ (function(modules) { // webpackBootstrap
 			styleElementsInsertedAtTop.splice(idx, 1);
 		}
 	}
-	
+
 	function createStyleElement(options) {
 		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
 		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
-	
+
 	function createLinkElement(options) {
 		var linkElement = document.createElement("link");
 		linkElement.rel = "stylesheet";
 		insertStyleElement(options, linkElement);
 		return linkElement;
 	}
-	
+
 	function addStyle(obj, options) {
 		var styleElement, update, remove;
-	
+
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
 			styleElement = singletonElement || (singletonElement = createStyleElement(options));
@@ -2642,9 +2059,9 @@ return /******/ (function(modules) { // webpackBootstrap
 				removeStyleElement(styleElement);
 			};
 		}
-	
+
 		update(obj);
-	
+
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
@@ -2655,19 +2072,19 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		};
 	}
-	
+
 	var replaceText = (function () {
 		var textStore = [];
-	
+
 		return function (index, replacement) {
 			textStore[index] = replacement;
 			return textStore.filter(Boolean).join('\n');
 		};
 	})();
-	
+
 	function applyToSingletonTag(styleElement, index, remove, obj) {
 		var css = remove ? "" : obj.css;
-	
+
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
@@ -2681,15 +2098,15 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 		}
 	}
-	
+
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-	
+
 		if(media) {
 			styleElement.setAttribute("media", media)
 		}
-	
+
 		if(styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = css;
 		} else {
@@ -2699,22 +2116,22 @@ return /******/ (function(modules) { // webpackBootstrap
 			styleElement.appendChild(document.createTextNode(css));
 		}
 	}
-	
+
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
 		var sourceMap = obj.sourceMap;
-	
+
 		if(sourceMap) {
             // https://developer.mozilla.org/en/docs/Web/API/WindowBase64/Base64_encoding_and_decoding
 			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 		}
-	
+
 		var blob = new Blob([css], { type: "text/css" });
-	
+
 		var oldSrc = linkElement.href;
-	
+
 		linkElement.href = URL.createObjectURL(blob);
-	
+
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
