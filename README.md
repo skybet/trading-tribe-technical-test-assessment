@@ -5,7 +5,7 @@ This test comes with a mock API server that represents a snapshot of our interna
 
 The challenge is to build an automation framework that explores and tests the endpoints provided.
 
-Further information regarding each endpoint can be the file `apiDocs.html`, after you have downloaded the files.
+Further information regarding each endpoint can be found in the file `apiDocs.html`, after you have downloaded the files.
 
 
 ### The Test
